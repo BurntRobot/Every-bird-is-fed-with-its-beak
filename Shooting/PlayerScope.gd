@@ -1,13 +1,12 @@
 extends KinematicBody2D
 
 var movement = Vector2()
-var speed = 4
+var speed = 3
 
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	$AnimationPlayer.play("idle")
-	OS.window_size = Vector2(512, 512)
 
 func _process(delta):
 	if Input.is_action_just_pressed("shoot"):
