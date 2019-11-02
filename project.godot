@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Every bird is fed with its beak"
+run/main_scene="res://Shooting/Shooting.tscn"
 config/icon="res://icon.png"
 
 [display]

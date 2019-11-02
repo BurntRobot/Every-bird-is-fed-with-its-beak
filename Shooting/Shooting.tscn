@@ -1,25 +1,36 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Shooting/Shooting.gd" type="Script" id=1]
-[ext_resource path="res://Shooting/Frame.png" type="Texture" id=2]
-[ext_resource path="res://Shooting/PlayerScope.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Shooting/Spawner.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Shooting/DeadZone.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Shooting/Background.png" type="Texture" id=2]
+[ext_resource path="res://Shooting/Frame.png" type="Texture" id=3]
+[ext_resource path="res://Shooting/PlayerScope.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Shooting/Spawner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Shooting/DeadZone.tscn" type="PackedScene" id=6]
 
 [node name="Shooting" type="Node"]
 script = ExtResource( 1 )
 
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
 [node name="Frame" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
-[node name="PlayerScope" parent="." instance=ExtResource( 3 )]
+[node name="PlayerScope" parent="." instance=ExtResource( 4 )]
 position = Vector2( 59, 46 )
 
 [node name="spawners" type="Node2D" parent="."]
 
-[node name="Spawner" parent="spawners" instance=ExtResource( 4 )]
-position = Vector2( 24.7708, 22.9262 )
+[node name="Spawner" parent="spawners" instance=ExtResource( 5 )]
+position = Vector2( -17.7993, 13.3905 )
 
-[node name="DeadZone" parent="." instance=ExtResource( 5 )]
+[node name="Spawner4" parent="spawners" instance=ExtResource( 5 )]
+position = Vector2( -38.233, 95.4657 )
+
+[node name="Spawner5" parent="spawners" instance=ExtResource( 5 )]
+position = Vector2( -69.2241, 49.8305 )
+
+[node name="DeadZone" parent="." instance=ExtResource( 6 )]
