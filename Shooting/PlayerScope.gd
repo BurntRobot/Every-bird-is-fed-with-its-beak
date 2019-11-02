@@ -19,5 +19,5 @@ func _process(delta):
 		movement = _mouse
 		movement = move_and_slide(movement * speed)
 
-func _on_Area2D_area_entered(area):
-	area.free()
+func _on_Area2D_body_entered(body):
+	body.free()
