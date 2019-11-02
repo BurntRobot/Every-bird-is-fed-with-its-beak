@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Shooting/Shooting.gd" type="Script" id=1]
 [ext_resource path="res://Shooting/Background.png" type="Texture" id=2]
-[ext_resource path="res://Shooting/Frame.png" type="Texture" id=3]
-[ext_resource path="res://Shooting/PlayerScope.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Shooting/Spawner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Shooting/Spawner.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Shooting/Frame.png" type="Texture" id=4]
+[ext_resource path="res://Shooting/PlayerScope.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Shooting/DeadZone.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Shooting/forest_ambient.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Shooting/Harp.ogg" type="AudioStream" id=8]
 
 [node name="Shooting" type="Node"]
 script = ExtResource( 1 )
@@ -14,23 +16,36 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 centered = false
 
+[node name="spawners" type="Node2D" parent="."]
+
+[node name="Spawner" parent="spawners" instance=ExtResource( 3 )]
+position = Vector2( -17.7993, 13.3905 )
+
+[node name="Spawner2" parent="spawners" instance=ExtResource( 3 )]
+position = Vector2( -38.233, 95.4657 )
+
+[node name="Spawner3" parent="spawners" instance=ExtResource( 3 )]
+position = Vector2( -69.2241, 49.8305 )
+
 [node name="Frame" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
-[node name="PlayerScope" parent="." instance=ExtResource( 4 )]
+[node name="PlayerScope" parent="." instance=ExtResource( 5 )]
 position = Vector2( 59, 46 )
 
-[node name="spawners" type="Node2D" parent="."]
-
-[node name="Spawner" parent="spawners" instance=ExtResource( 5 )]
-position = Vector2( -17.7993, 13.3905 )
-
-[node name="Spawner2" parent="spawners" instance=ExtResource( 5 )]
-position = Vector2( -38.233, 95.4657 )
-
-[node name="Spawner3" parent="spawners" instance=ExtResource( 5 )]
-position = Vector2( -69.2241, 49.8305 )
-
 [node name="DeadZone" parent="." instance=ExtResource( 6 )]
+
+[node name="Ambient" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -20.0
+autoplay = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
+
+[node name="DeadZone2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 141.673, 56.1931 )
+rotation = 1.57127
