@@ -1,8 +1,11 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Shooting/PlayerScope.gd" type="Script" id=1]
-[ext_resource path="res://Shooting/Scope.png" type="Texture" id=2]
-[ext_resource path="res://Shooting/rifle.wav" type="AudioStream" id=3]
+[ext_resource path="res://PlayerScope/PlayerScope.gd" type="Script" id=1]
+[ext_resource path="res://PlayerScope/Scope.png" type="Texture" id=2]
+[ext_resource path="res://PlayerScope/rifle.wav" type="AudioStream" id=3]
+
+
+
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 2.0

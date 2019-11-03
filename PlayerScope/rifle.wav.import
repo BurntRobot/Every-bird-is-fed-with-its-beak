@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/rifle.wav-675702b708d32019b70542884c8a219a.sample"
+path="res://.import/rifle.wav-982f35fae09ef4f1522547bbb9c49334.sample"
 
 [deps]
 
-source_file="res://Shooting/rifle.wav"
-dest_files=[ "res://.import/rifle.wav-675702b708d32019b70542884c8a219a.sample" ]
+source_file="res://PlayerScope/rifle.wav"
+dest_files=[ "res://.import/rifle.wav-982f35fae09ef4f1522547bbb9c49334.sample" ]
 
 [params]
 

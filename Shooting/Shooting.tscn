@@ -4,7 +4,7 @@
 [ext_resource path="res://Shooting/Background.png" type="Texture" id=2]
 [ext_resource path="res://Shooting/Spawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Shooting/Frame.png" type="Texture" id=4]
-[ext_resource path="res://Shooting/PlayerScope.tscn" type="PackedScene" id=5]
+[ext_resource path="res://PlayerScope/PlayerScope.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Shooting/DeadZone.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Shooting/forest_ambient.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Shooting/Red Curtain.ogg" type="AudioStream" id=8]
@@ -49,3 +49,21 @@ autoplay = true
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 autoplay = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 6.58485
+margin_top = 5.5094
+margin_right = 46.5849
+margin_bottom = 19.5094
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 103.0
+margin_top = 4.0
+margin_right = 123.0
+margin_bottom = 18.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+
+[node name="EndgameTimer" type="Timer" parent="."]
