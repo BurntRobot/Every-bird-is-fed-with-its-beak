@@ -6,7 +6,7 @@ var on_cooldown = false
 
 
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED and Input.MOUSE_MODE_HIDDEN)
 	$AnimationPlayer.play("idle")
 
 func _process(delta):

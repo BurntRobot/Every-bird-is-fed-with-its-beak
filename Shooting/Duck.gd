@@ -19,6 +19,7 @@ func _physics_process(delta):
 	motion = move_and_slide(motion)
 
 func _on_Timer_timeout():
+	randomize()
 	floating_y = randf() * 5
 	if _sign == 1:
 		_sign = -1
@@ -29,4 +30,5 @@ func _on_Timer_timeout():
 func die():
 	$CPUParticles2D.emitting = true
 	$AnimationPlayer.play("death")
+	$AudioStreamPlayer.play()
 	alive = false

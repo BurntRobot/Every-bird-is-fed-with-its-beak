@@ -34,6 +34,13 @@ shoot={
  ]
 }
 
+[layer_names]
+
+2d_render/layer_1="Scope"
+2d_physics/layer_1="Scope"
+2d_render/layer_2="Duck"
+2d_physics/layer_2="Duck"
+
 [rendering]
 
 environment/default_clear_color=Color( 1, 0.854902, 0.8, 1 )

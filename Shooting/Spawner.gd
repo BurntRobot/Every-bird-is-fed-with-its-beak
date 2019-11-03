@@ -6,6 +6,7 @@ func _on_SpawnTimer_timeout():
 	instantiate_duck()
 
 func instantiate_duck():
+	randomize()
 	var node = _duck.instance()
 	node.position.y = randf() * 50
 	node.speed = randf() * 2 + 1
