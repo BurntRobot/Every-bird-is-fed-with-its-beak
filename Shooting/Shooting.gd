@@ -10,6 +10,10 @@ func _process(delta):
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 
-
 func _on_LinkButton_pressed():
-	print("pressed")
+	$Control3.visible = false
+	$LinkButton.visible = false
+	$PlayerScope.game_started = true
+	$spawners/Spawner.start_spawn()
+	$spawners/Spawner2.start_spawn()
+	$spawners/Spawner3.start_spawn()

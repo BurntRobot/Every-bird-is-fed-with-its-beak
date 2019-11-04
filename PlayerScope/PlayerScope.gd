@@ -5,6 +5,7 @@ var speed = 3
 var on_cooldown = false
 var bullets = 30
 var dead_ducks = 0
+var game_started = false
 
 
 func _ready():
@@ -18,7 +19,8 @@ func _process(delta):
 			$AudioStreamPlayer2D.play()
 			on_cooldown = true
 			$CooldownTimer.start()
-			bullets -= 1
+			if game_started:
+				bullets -= 1
 		else:
 			if not $AnimationPlayer.is_playing():
 				$AnimationPlayer.play("idle")

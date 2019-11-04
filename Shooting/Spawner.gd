@@ -11,3 +11,6 @@ func instantiate_duck():
 	node.position.y = randf() * 50
 	node.speed = randf() * 2 + 1
 	add_child(node)
+
+func start_spawn():
+	$SpawnTimer.start()
