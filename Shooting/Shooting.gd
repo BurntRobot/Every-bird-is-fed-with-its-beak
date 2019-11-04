@@ -9,3 +9,7 @@ func _process(delta):
 	$Control2/Label.text = str($PlayerScope.dead_ducks)
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
+
+
+func _on_LinkButton_pressed():
+	print("pressed")
