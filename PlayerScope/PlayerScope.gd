@@ -6,6 +6,7 @@ var on_cooldown = false
 var bullets = 30
 var dead_ducks = 0
 var game_started = false
+signal end_game
 
 
 func _ready():
@@ -27,12 +28,13 @@ func _process(delta):
 			var _mouse = get_local_mouse_position().round()
 			movement = _mouse
 			movement = move_and_slide(movement * speed)
+	if bullets == 0:
+		get_tree().paused = true
+		emit_signal("end_game")
 
 func _on_Area2D_body_entered(body):
 	dead_ducks += 1
 	body.die()
-	if bullets == 0:
-		print("game ended")
 
 func _on_CooldownTimer_timeout():
 	on_cooldown = false

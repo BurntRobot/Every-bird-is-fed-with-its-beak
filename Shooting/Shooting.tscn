@@ -23,6 +23,7 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="Control3" type="Control" parent="."]
+editor/display_folded = true
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -80.0
@@ -71,7 +72,44 @@ position = Vector2( -38.233, 95.4657 )
 [node name="Spawner3" parent="spawners" instance=ExtResource( 5 )]
 position = Vector2( -69.2241, 49.8305 )
 
+[node name="Control4" type="Control" parent="."]
+pause_mode = 2
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -80.0
+margin_top = 76.0
+margin_right = -50.0
+margin_bottom = 91.0
+
+[node name="ColorRect" type="ColorRect" parent="Control4"]
+margin_left = -43.0
+margin_top = -56.0
+margin_right = 76.0
+color = Color( 1, 0.854902, 0.8, 1 )
+
+[node name="Label" type="Label" parent="Control4"]
+margin_left = -35.0
+margin_top = -52.0
+margin_right = 68.0
+margin_bottom = -20.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0901961, 0.298039, 0.282353, 1 )
+text = "Thanks for playing!
+[ESC for exit]"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control4"]
+margin_left = -43.0
+margin_top = -56.0
+margin_right = 76.0
+texture = ExtResource( 4 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
 [node name="PlayerScope" parent="." instance=ExtResource( 6 )]
+pause_mode = 2
 position = Vector2( 59, 46 )
 
 [node name="DeadZone" parent="." instance=ExtResource( 7 )]
@@ -87,6 +125,7 @@ autoplay = true
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
+volume_db = -20.0
 autoplay = true
 
 [node name="EndgameTimer" type="Timer" parent="."]
@@ -185,4 +224,29 @@ margin_bottom = 10.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.0901961, 0.298039, 0.282353, 1 )
 text = "Got it!"
+
+[node name="LinkButton2" type="LinkButton" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 42.0
+margin_top = 59.0
+margin_right = 79.0
+margin_bottom = 73.0
+
+[node name="Sprite" type="Sprite" parent="LinkButton2"]
+position = Vector2( 6, 5 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 8, 1, 8, 6 )
+
+[node name="Label2" type="Label" parent="LinkButton2"]
+margin_left = 12.0
+margin_top = -3.0
+margin_right = 37.0
+margin_bottom = 10.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0901961, 0.298039, 0.282353, 1 )
+text = "Retry"
+[connection signal="end_game" from="PlayerScope" to="." method="_on_PlayerScope_end_game"]
 [connection signal="pressed" from="LinkButton" to="." method="_on_LinkButton_pressed"]
+[connection signal="pressed" from="LinkButton2" to="." method="_on_LinkButton2_pressed"]
